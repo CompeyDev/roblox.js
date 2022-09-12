@@ -1,5 +1,6 @@
 import fetchStores from './fetchStores'
 import fetchEntries from './fetchEntries'
+import fetchEntry from './fetchEntry'
 
 export class Datastore {
     universeid: string;
@@ -91,6 +92,12 @@ export class Datastore {
 
             return data
         }
+    }
+
+    public async GetAsync(datastoreName: string, entryKey: string) {
+        const data = await fetchEntry(this.apiKey, this.universeid, datastoreName, entryKey)
+
+        return data
     }
 
 }
