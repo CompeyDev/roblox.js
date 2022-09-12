@@ -1,6 +1,7 @@
 import fetchStores from './fetchStores'
 import fetchEntries from './fetchEntries'
 import fetchEntry from './fetchEntry'
+import setEntry from './setEntry'
 
 export class Datastore {
     universeid: string;
@@ -98,6 +99,33 @@ export class Datastore {
         const data = await fetchEntry(this.apiKey, this.universeid, datastoreName, entryKey)
 
         return data
+    }
+
+    public async SetAsync(datastoreName: string, entryKey: string, newValue: string|number|boolean, matchVersion?: string, exclusiveCreate?: Boolean) {
+        
+        if (datastoreName) {
+            const data = await setEntry(this.apiKey, this.universeid, datastoreName, entryKey, newValue)
+
+            return data
+        }
+
+        if (matchVersion) {
+            const data = await setEntry(this.apiKey, this.universeid, datastoreName, entryKey, newValue, matchVersion)
+
+            return data
+        }
+
+        if (exclusiveCreate) {
+            const data = await setEntry(this.apiKey, this.universeid, datastoreName, entryKey, newValue, undefined, exclusiveCreate)
+
+            return data
+        }
+
+        if (exclusiveCreate && matchVersion) {
+            const data = await setEntry(this.apiKey, this.universeid, datastoreName, entryKey, newValue, exclusiveCreate, exclusiveCreate)
+
+            return data
+        }
     }
 
 }
