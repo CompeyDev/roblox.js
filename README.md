@@ -1,2 +1,2 @@
 # roblox.js
-A wrapper for the ROBLOX OpenCloud API.
+A JavaScript wrapper for the ROBLOX OpenCloud API.
