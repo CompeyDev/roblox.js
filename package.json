@@ -1,0 +1,18 @@
+{
+  "name": "roblox.js",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "hi@devcomp.xyz",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^18.7.16",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
+    "urlcat": "^2.0.4"
+  }
+}
