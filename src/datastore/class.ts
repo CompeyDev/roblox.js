@@ -130,7 +130,7 @@ export class Datastore {
     }
 
     public async IncrementAsync(datastoreName: string, entryKey: string, incrementBy: number) {
-        const data = incrementEntry(this.apiKey, this.universeid, datastoreName, entryKey, incrementBy)
+        const data = await incrementEntry(this.apiKey, this.universeid, datastoreName, entryKey, incrementBy)
         
         return data
     }
