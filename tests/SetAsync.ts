@@ -6,7 +6,7 @@ dotenv.config()
 const datastore = new Datastore(process.env.universeId, process.env.apiKey)
 
 
-async function main() {
+export default async function main() {
     console.log(await datastore.SetAsync("KeyStore", "SECRET", 22))
 }
 
