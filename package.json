@@ -7,7 +7,9 @@
   "private": false,
   "scripts": {
     "watch": "tsc -w",
-    "test": "mocha dist/tests/tests.mocha.js"
+    "test": "mocha dist/tests/tests.mocha.js",
+    "push": "yarn test && git push origin",
+    "prepublish": "yarn test"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
