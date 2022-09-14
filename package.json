@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "test": "mocha dist/tests/tests.mocha.js"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
