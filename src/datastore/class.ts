@@ -2,6 +2,7 @@ import fetchStores from './fetchStores'
 import fetchEntries from './fetchEntries'
 import fetchEntry from './fetchEntry'
 import setEntry from './setEntry'
+import incrementEntry from './incrementEntry'
 
 export class Datastore {
     universeid: string;
@@ -126,6 +127,10 @@ export class Datastore {
 
             return data
         }
+    }
+
+    public async IncrementAsync(datastoreName: string, entryKey: string, incrementBy: number) {
+        incrementEntry(this.apiKey, this.universeid, datastoreName, entryKey, incrementBy)
     }
 
 }

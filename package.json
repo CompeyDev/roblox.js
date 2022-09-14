@@ -5,6 +5,9 @@
   "author": "hi@devcomp.xyz",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "watch": "tsc -w"
+  },
   "devDependencies": {
     "@types/node": "^18.7.16",
     "ts-node": "^10.9.1",

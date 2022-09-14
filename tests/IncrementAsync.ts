@@ -7,7 +7,7 @@ const datastore = new Datastore(process.env.universeId, process.env.apiKey)
 
 
 async function main() {
-    console.log(await datastore.SetAsync("KeyStore", "SECRET", 22))
+    console.log(await datastore.IncrementAsync("KeyStore", "SECRET", 2))
 }
 
 main()
