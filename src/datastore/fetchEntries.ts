@@ -1,16 +1,10 @@
 import urlcat from 'urlcat';
 import axios from 'axios'
+import { DatastoreEntries } from '../../lib/types/types'
 
 const BASE_URL = "https://apis.roblox.com/datastores/v1/universes"
 
-export default async function main(apiKey: string, universeid: string, datastoreName: string, prefix?: string, limit?: string, cursor?: string, AllScopes?: boolean): Promise<{
-    "keys": [
-        {
-            "key": string
-        }
-    ],
-    "nextPageCursor": string
-}|undefined> {
+export default async function main(apiKey: string, universeid: string, datastoreName: string, prefix?: string, limit?: string, cursor?: string, AllScopes?: boolean): Promise<DatastoreEntries|undefined> {
     try {
         BigInt(universeid)
         Number(limit)

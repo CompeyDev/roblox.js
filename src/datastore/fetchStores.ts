@@ -1,17 +1,10 @@
 import urlcat from 'urlcat';
 import axios from 'axios'
+import { Datastores } from '../../lib/types/types';
 
 const BASE_URL = "https://apis.roblox.com/datastores/v1/universes"
 
-export default async function main(apiKey: string, universeid: string, prefix?: string, limit?: string, cursor?: string): Promise<{
-    "datastores": [
-        {
-            "name": String,
-            "createdTime": String
-        }
-    ],
-    "nextPageCursor": String
-}|undefined> {
+export default async function main(apiKey: string, universeid: string, prefix?: string, limit?: string, cursor?: string): Promise<Datastores|undefined> {
     try {
         BigInt(universeid)
         Number(limit)

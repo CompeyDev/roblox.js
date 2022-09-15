@@ -3,6 +3,7 @@ import fetchEntries from './fetchEntries'
 import fetchEntry from './fetchEntry'
 import setEntry from './setEntry'
 import incrementEntry from './incrementEntry'
+import { DatastoreEntries, Datastores, DatastoreSetResponse } from '../../lib/types/types'
 
 export class Datastore {
     universeid: string;
@@ -13,15 +14,7 @@ export class Datastore {
         this.universeid = universeid;
     }
 
-    public async ListDataStoresAsync(prefix?: string, limit?: string, cursor?: string): Promise<{
-        "datastores": [
-            {
-                "name": String,
-                "createdTime": String
-            }
-        ],
-        "nextPageCursor": String
-    }|undefined> {
+    public async ListDataStoresAsync(prefix?: string, limit?: string, cursor?: string): Promise<Datastores|undefined> {
         
         if (prefix) {
             const data = await fetchStores(this.apiKey, this.universeid, prefix)
@@ -52,14 +45,7 @@ export class Datastore {
         }
     }
 
-    public async ListKeysAsync(datastoreName: string, prefix?: string, limit?: string, cursor?: string, AllScopes?: boolean): Promise<{
-        "keys": [
-            {
-                "key": string
-            }
-        ],
-        "nextPageCursor": string
-    }|undefined> {
+    public async ListKeysAsync(datastoreName: string, prefix?: string, limit?: string, cursor?: string, AllScopes?: boolean): Promise<DatastoreEntries|undefined> {
         
         if (prefix) {
             const data = await fetchEntries(this.apiKey, datastoreName, this.universeid, prefix)
@@ -102,7 +88,7 @@ export class Datastore {
         return data
     }
 
-    public async SetAsync(datastoreName: string, entryKey: string, newValue: string|number|boolean, matchVersion?: string, exclusiveCreate?: Boolean) {
+    public async SetAsync(datastoreName: string, entryKey: string, newValue: string|number|boolean, matchVersion?: string, exclusiveCreate?: Boolean): Promise<DatastoreSetResponse|undefined> {
         
         if (datastoreName) {
             const data = await setEntry(this.apiKey, this.universeid, datastoreName, entryKey, newValue)
@@ -129,7 +115,7 @@ export class Datastore {
         }
     }
 
-    public async IncrementAsync(datastoreName: string, entryKey: string, incrementBy: number) {
+    public async IncrementAsync(datastoreName: string, entryKey: string, incrementBy: number): Promise<DatastoreSetResponse> {
         const data = await incrementEntry(this.apiKey, this.universeid, datastoreName, entryKey, incrementBy)
         
         return data
