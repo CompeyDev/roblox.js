@@ -1,3 +1,8 @@
+/**
+ * Returns the buffer of an integer.
+ * @param {number} integer - Integer to get the buffer of.  
+ */
+
 export function toBuffer(integer: number) {
   var length = Math.ceil(Math.log(integer) / Math.log(2) / 8); // How much byte to store integer in the buffer
   var buffer = new Buffer(length);

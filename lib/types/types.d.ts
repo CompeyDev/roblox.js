@@ -1,3 +1,7 @@
+/**
+ * @see[GetAsync](../../src/datastore/fetchEntries.ts) API return object type.
+ */
+
 export interface DatastoreEntries {
   keys: [
     {
@@ -6,6 +10,10 @@ export interface DatastoreEntries {
   ];
   nextPageCursor: string;
 }
+
+/**
+ * @see[GetAsync](../../src/datastore/fetchStores.ts) API return object type.
+ */
 
 export interface Datastores {
   datastores: [
@@ -16,6 +24,10 @@ export interface Datastores {
   ];
   nextPageCursor: String;
 }
+
+/**
+ * @see[GetAsync](../../src/datastore/setEntry.ts) API return object type.
+ */
 
 export interface DatastoreSetResponse {
   version: string,
