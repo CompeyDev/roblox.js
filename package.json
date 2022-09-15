@@ -1,6 +1,8 @@
 {
   "name": "roblox.js",
-  "version": "1.0.0",
+  "description": "A JavaScript wrapper for interacting with the ROBLOX OpenCloud API.",
+  "repository": "https://github.com/CompeyDev/roblox.js",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "author": "hi@devcomp.xyz",
   "license": "MIT",
