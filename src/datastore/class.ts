@@ -4,6 +4,7 @@ import fetchEntry from './fetchEntry'
 import setEntry from './setEntry'
 import incrementEntry from './incrementEntry'
 import removeEntry from './removeEntry'
+import fetchEntryVersion from './fetchEntryVersion'
 import { DatastoreEntries, Datastores, DatastoreSetResponse } from '../../lib/types/types'
 
 export class Datastore {
@@ -167,10 +168,25 @@ export class Datastore {
         return data
     }
 
-    public async RemoveAsync(datastoreName: string, entryKey: string) {
+    public async RemoveAsync(datastoreName: string, entryKey: string): Promise<string|number|boolean|undefined> {
         const data = await removeEntry(this.apiKey, this.universeid, datastoreName, entryKey)
 
         return data
+    }
+
+    public async GetVersionAsync(datastoreName: string, entryKey: string, versionid: string, scope?: string): Promise<string|number|boolean|undefined> {
+        if (versionid) {
+            const data = await fetchEntryVersion(this.apiKey, this.universeid, datastoreName, entryKey, versionid)
+
+            return data
+        }
+
+        if (scope) {
+            const data = await fetchEntryVersion(this.apiKey, this.universeid, datastoreName, entryKey, versionid, scope)
+
+            return data
+        }
+
     }
 
 }

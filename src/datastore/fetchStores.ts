@@ -18,7 +18,7 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
             "x-api-key": apiKey
             }
         };
-        const response = await axios.get(res_url, config)
+        const response = await axios.get(res_url, config) // .catch(err =>  { throw((err.message).toString().substring(11)) })
         return await response.data
     }
 
@@ -40,7 +40,7 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
             "x-api-key": apiKey
             }
         };
-        const response = await axios.get(res_url, config)
+        const response = await axios.get(res_url, config).catch(err => { throw(err.substr(11)) })
         return await response.data
     }
 

@@ -52,6 +52,11 @@
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.3.tgz#3c90752792660c4b562ad73b3fbd68bf3bc7ae07"
   integrity sha512-hC7OMnszpxhZPduX+m+nrx+uFoLkWOMiR4oa/AZF3MuSETYTZmFfJAHqZEM8MVlvfG7BEUcgvtwoCTxBp6hm3g==
 
+"@types/lodash@^4.14.185":
+  version "4.14.185"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.185.tgz#c9843f5a40703a8f5edfd53358a58ae729816908"
+  integrity sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==
+
 "@types/mocha@^9.1.1":
   version "9.1.1"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-9.1.1.tgz#e7c4f1001eefa4b8afbd1eee27a237fee3bf29c4"
@@ -453,6 +458,11 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@4.1.0:
   version "4.1.0"

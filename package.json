@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
+    "@types/lodash": "^4.14.185",
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.7.18",
     "chai": "^4.3.6",
@@ -25,6 +26,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.0.2",
+    "lodash": "^4.17.21",
     "urlcat": "^2.0.4"
   }
 }
