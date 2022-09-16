@@ -7,7 +7,7 @@ const datastore = new Datastore(process.env.universeId, process.env.apiKey)
 
 
 export default async function main() {
-    console.log(await datastore.SetAsync("KeyStore", "SECRET", 22))
+    console.log(await datastore.SetAsync("KeyStore", "TESTING", 22))
 }
 
 main()

@@ -3,7 +3,9 @@ import SetAsync from './SetAsync'
 import IncrementAsync from './IncrementAsync'
 import ListKeysAsync from './ListKeysAsync'
 import ListDataStoresAsync from './ListDataStoresAsync'
-+
+import RemoveAsync from './RemoveAsync'
+
+
 describe("GetAsync", function() {
     it("successfully fetches key values", function() {
         GetAsync()
@@ -31,5 +33,11 @@ describe("ListKeysAsync", function() {
 describe("ListDataStoresAsync", function() {
     it("successfully lists datastores", function() {
         ListDataStoresAsync()
+    });
+});
+
+describe("RemovesKeyAsync", function() {
+    it("successfully removes keys", function() {
+        RemoveAsync()
     });
 });
