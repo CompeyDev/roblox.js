@@ -8,8 +8,8 @@ import fetchEntryVersion from './fetchEntryVersion'
 import { DatastoreEntries, Datastores, DatastoreSetResponse } from '../../lib/types/types'
 
 export class Datastore {
-    universeid: string;
-    apiKey: string;
+    private universeid: string;
+    private apiKey: string;
 
     /**
      * You can send and receive the following request and response payloads to DataStore API of Open Cloud. 
