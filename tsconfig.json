@@ -4,8 +4,8 @@
     "module": "commonjs",                                
     "outDir": "dist",                                   
     "esModuleInterop": true,                             
-    "forceConsistentCasingInFileNames": true,  
-    // "resolveJsonModule": true,        
+    "forceConsistentCasingInFileNames": true, 
     "strict": true,                                     
-  }
+  },
+  "include": ["lib/types/*"]
 }
