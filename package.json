@@ -1,18 +1,19 @@
 {
-  "name": "roblox.js",
+  "name": "rblx.js",
   "description": "A JavaScript wrapper for interacting with the ROBLOX OpenCloud API.",
   "repository": "https://github.com/CompeyDev/roblox.js",
-  "version": "0.0.1",
-  "main": "dist/src/index.js",
+  "version": "1.0.4",
+  "main": "dist/index.js",
   "typings": "./lib/types/types.d.ts",
   "author": "hi@devcomp.xyz",
   "license": "MIT",
   "private": false,
   "scripts": {
     "watch": "tsc -w",
+    "build": "tsc && bash export.sh",
     "test": "mocha dist/tests/tests.mocha.js",
     "push": "yarn test && git push origin",
-    "prepublish": "yarn test"
+    "prepublishOnly": "yarn build && yarn test"
   },
   "dependencies": {
     "axios": "^0.27.2",

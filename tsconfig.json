@@ -7,5 +7,6 @@
     "forceConsistentCasingInFileNames": true, 
     "strict": true,                                     
   },
-  "include": ["lib/types/*"]
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
 }
