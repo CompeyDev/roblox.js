@@ -1,4 +1,4 @@
-import { Datastore } from '../src'
+import { Datastore } from '../../src'
 import * as dotenv from 'dotenv'
 dotenv.config()
 
@@ -7,7 +7,7 @@ const datastore = new Datastore(process.env.universeId, process.env.apiKey)
 
 
 export default async function main() {
-    console.log(await datastore.ListDataStoresAsync())
+    console.log(await datastore.SetAsync("KeyStore", "TESTING", 22))
 }
 
 main()

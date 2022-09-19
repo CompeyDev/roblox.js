@@ -1,12 +1,13 @@
-import GetAsync from './GetAsync'
-import SetAsync from './SetAsync'
-import IncrementAsync from './IncrementAsync'
-import ListKeysAsync from './ListKeysAsync'
-import ListDataStoresAsync from './ListDataStoresAsync'
-import RemoveAsync from './RemoveAsync'
-import GetVersionAsync from './GetVersionAsync'
+import GetAsync from './datastore/GetAsync'
+import SetAsync from './datastore/SetAsync'
+import IncrementAsync from './datastore/IncrementAsync'
+import ListKeysAsync from './datastore/ListKeysAsync'
+import ListDataStoresAsync from './datastore/ListDataStoresAsync'
+import RemoveAsync from './datastore/RemoveAsync'
+import GetVersionAsync from './datastore/GetVersionAsync'
+import PublishAsync from './messagingservice/PublishAsync'
 
-
+// Datastore tests
 describe("GetAsync", function() {
     it("successfully fetches key values", function() {
         GetAsync()
@@ -46,5 +47,13 @@ describe("RemovesKeyAsync", function() {
 describe("GetsVersionAsync", function() {
     it("successfully gets a key from its version", function() {
         GetVersionAsync()
+    });
+});
+
+// MessagingService tests
+
+describe("PublishesAsync", function() {
+    it("successfully publish a message to a topic", function() {
+        PublishAsync()
     });
 });
