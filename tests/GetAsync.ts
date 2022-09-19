@@ -1,6 +1,4 @@
 import { Datastore } from '../src'
-import { describe, it } from 'mocha'
-import { expect } from 'chai'
 import * as dotenv from 'dotenv'
 dotenv.config()
 
