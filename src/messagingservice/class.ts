@@ -1,8 +1,8 @@
 import postTopic from './postTopic'
 
 export class MessagingService {
-    apiKey: string
-    universeid: string
+    private apiKey: string
+    private universeid: string
     constructor(universeid: string, apiKey: string) {
         this.apiKey = apiKey
         this.universeid = universeid;
