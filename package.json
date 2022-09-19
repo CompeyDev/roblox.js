@@ -4,6 +4,7 @@
   "repository": "https://github.com/CompeyDev/roblox.js",
   "version": "0.0.1",
   "main": "dist/index.js",
+  "typings": "./lib/types/types.d.ts",
   "author": "hi@devcomp.xyz",
   "license": "MIT",
   "private": false,
