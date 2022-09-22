@@ -52,6 +52,19 @@ await datastore.SetAsync("DATASTORE_NAME", "KEY_NAME", "VALUE")
 #### Optional Arguments: `matchVersion: string, exclusiveCreate: Boolean`
 #### Returns: `Promise<DatastoreSetResponse|undefined>`
 
+### RemoveAsync
+RemoveAsync lets you remove a key from a datastore.
+
+```js
+const { Datastore } = require('rblx.js')
+
+const datastore = new Datastore("UNIVERSE_ID", "API_KEY")
+
+await datastore.RemoveAsync("DATASTORE_NAME", "KEY_NAME")
+
+```
+#### Returns: `Promise<undefined>`
+
 ### ListKeysAsync
 ListKeysAsync lets you fetch a list of keys in a datastore.
 
@@ -78,6 +91,34 @@ await datastore.ListDataStoresAsync()
 ```
 #### Optional Arguments: `prefix: string, limit: string, cursor: string, AllScopes: boolean`
 #### Returns: `Promise<DatastoreEntries|undefined>`
+
+
+### GetVersionAsync
+GetVersionAsync lets you fetch a key from its version.
+
+```js
+const { Datastore } = require('rblx.js')
+
+const datastore = new Datastore("UNIVERSE_ID", "API_KEY")
+
+await datastore.GetVersionAsync("DATASTORE_NAME", "KEY_NAME", "08DA9790C75527F0.0000000011.08DA9798C9BEB578.01")
+
+```
+#### Optional Arguments: `scope: string`
+#### Returns: `Promise<string|number|boolean|undefined>`
+
+### IncrementAsync
+IncrementAsync increments a key with an integer value by the given value.
+
+```js
+const { Datastore } = require('rblx.js')
+
+const datastore = new Datastore("UNIVERSE_ID", "API_KEY")
+
+await datastore.IncrementAsync("DATASTORE_NAME", "KEY_NAME", 3)
+
+```
+#### Returns: `Promise<DatastoreSetResponse>`
 
 
 # License 
