@@ -1,6 +1,11 @@
 <div align="center"><img src="https://raw.githubusercontent.com/CompeyDev/roblox.js/main/assets/roblox-js-dark.png#gh-dark-mode-only" width="50%" ></div>
 <div align="center"><img src="https://raw.githubusercontent.com/CompeyDev/roblox.js/main/assets/roblox-js-light.png#gh-light-mode-only" width="50%" ></div>
 <div align="center">A JavaScript wrapper for the ROBLOX OpenCloud API.</div>
+<p align="center">
+<br>
+<a href="https://npm.im/rblx.js"> <img src="https://img.shields.io/npm/v/rblx.js?color=%23800080" /> </a>
+<a href="https://bundlephobia.com/package/rblx.js@latest"> <img src="https://img.shields.io/bundlephobia/min/rblx.js" /> </a>
+<a href="https://compeydev.mit-license.org"> <img src="https://img.shields.io/npm/l/rblx.js" /> </a>
 
 ---
 
