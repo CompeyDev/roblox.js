@@ -2,11 +2,16 @@
   "name": "rblx.js",
   "description": "A JavaScript wrapper for interacting with the ROBLOX OpenCloud API.",
   "repository": "https://github.com/CompeyDev/roblox.js",
-  "version": "1.0.4",
+  "version": "1.0.74",
   "main": "dist/index.js",
   "typings": "./lib/types/types.d.ts",
   "author": "hi@devcomp.xyz",
   "license": "MIT",
+  "keywords": [
+    "roblox",
+    "roblox.js",
+    "opencloud"
+  ],
   "private": false,
   "scripts": {
     "watch": "tsc -w",
