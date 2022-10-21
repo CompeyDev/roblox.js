@@ -3,12 +3,12 @@
  */
 
 export interface DatastoreEntries {
-  keys: [
-    {
-      key: string;
-    }
-  ];
-  nextPageCursor: string;
+    keys: [
+        {
+            key: string;
+        }
+    ];
+    nextPageCursor: string;
 }
 
 /**
@@ -16,13 +16,13 @@ export interface DatastoreEntries {
  */
 
 export interface Datastores {
-  datastores: [
-    {
-      name: String;
-      createdTime: String;
-    }
-  ];
-  nextPageCursor: String;
+    datastores: [
+        {
+            name: String;
+            createdTime: String;
+        }
+    ];
+    nextPageCursor: String;
 }
 
 /**
@@ -30,9 +30,28 @@ export interface Datastores {
  */
 
 export interface DatastoreSetResponse {
-  version: string,
-  deleted: boolean,
-  contentLength: number,
-  createdTime: string,
-  objectCreatedTime: string
+    version: string,
+    deleted: boolean,
+    contentLength: number,
+    createdTime: string,
+    objectCreatedTime: string
+}
+
+export class Datastore {
+    private universeid: string;
+    private apiKey: string
+    constructor(universeid: string, apiKey: string);
+    public async ListDataStoresAsync(prefix?: string, limit?: string, cursor?: string);
+    public async GetAsync(datastoreName: string, entryKey: string);
+    public async SetAsync(datastoreName: string, entryKey: string, newValue: string|number|boolean, matchVersion?: string, exclusiveCreate?: Boolean): Promise<DatastoreSetResponse|undefined>
+    public async IncrementAsync(datastoreName: string, entryKey: string, incrementBy: number): Promise<DatastoreSetResponse>;
+    public async RemoveAsync(datastoreName: string, entryKey: string): Promise<string|number|boolean|undefined>;
+    public async GetVersionAsync(datastoreName: string, entryKey: string, versionid: string, scope?: string): Promise<string|number|boolean|undefined>;
+}
+
+export class MessagingService {
+    private apiKey: string;
+    private universeid: string;
+    constructor(universeid: string, apiKey: string);
+    public async PublishAsync(topic: string, message: string);
 }
