@@ -4,7 +4,7 @@
   "repository": "https://github.com/CompeyDev/roblox.js",
   "version": "1.3.0",
   "main": "dist/index.js",
-  "typings": "index.d.ts",
+  "typings": "dist/index.d.ts",
   "author": "hi@devcomp.xyz",
   "license": "MIT",
   "keywords": [
@@ -17,8 +17,9 @@
     "watch": "tsc -w",
     "build": "tsc && bash export.sh",
     "test": "mocha tests/tests.mocha.ts",
-    "push": "yarn test && git push origin",
-    "prepublishOnly": "yarn build && yarn test"
+    "push": "pnpm test && git push origin",
+    "prepublishOnly": "pnpm build && pnpm test",
+    "publish": "pnpm publish dist"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -37,7 +38,7 @@
     "typescript": "^4.8.3"
   },
   "files": [
-    "dist",
+    "dist/*",
     "!**/*.tsbuildinfo"
   ],
   "publishConfig": {
