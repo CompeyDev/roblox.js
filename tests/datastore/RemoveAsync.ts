@@ -1,4 +1,4 @@
-import { Datastore } from '../../src'
+import { Datastore } from '../../dist'
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
 import * as dotenv from 'dotenv'

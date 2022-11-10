@@ -129,7 +129,7 @@ export class Datastore implements DatastoreClass {
         }
     }
 
-    public async GetAsync(datastoreName: string, entryKey: string) {
+    public async GetAsync(datastoreName: string, entryKey: string): Promise<string|number|boolean|undefined> {
         const data = await fetchEntry(this.apiKey, this.universeid, datastoreName, entryKey)
 
         return data

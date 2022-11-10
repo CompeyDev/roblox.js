@@ -4,7 +4,7 @@
   "repository": "https://github.com/CompeyDev/roblox.js",
   "version": "1.0.74",
   "main": "dist/index.js",
-  "typings": "./lib/types/types.d.ts",
+  "typings": "index.d.ts",
   "author": "hi@devcomp.xyz",
   "license": "MIT",
   "keywords": [
@@ -16,7 +16,7 @@
   "scripts": {
     "watch": "tsc -w",
     "build": "tsc && bash export.sh",
-    "test": "mocha dist/tests/tests.mocha.js",
+    "test": "mocha tests/tests.mocha.ts",
     "push": "yarn test && git push origin",
     "prepublishOnly": "yarn build && yarn test"
   },
