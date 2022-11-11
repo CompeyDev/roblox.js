@@ -32,3 +32,6 @@ Functions are named similar to the Lua equivalents and follow a similar structur
 
 # License 
 [MIT](https://compeydev.mit-license.org) © DevComp - see the [LICENSE.md](LICENSE) file for details.
+
+# Documentation
+For detailed documentations and examples check out [the wiki](https://github.com/CompeyDev/roblox.js/wiki) or the [`docs`](https://github.com/CompeyDev/roblox.js/tree/HEAD/docs) directory.
