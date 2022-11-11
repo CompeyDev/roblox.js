@@ -9,7 +9,7 @@ export class MessagingService implements MessagingServiceClass {
         this.universeid = universeid;
     }
 
-    public async PublishAsync(topic: string, message: string) {
+    public async PublishAsync(topic: string, message: string): Promise<string|number|boolean|undefined> {
         const data = await postTopic(this.apiKey, this.universeid, topic, message)
 
         return data
