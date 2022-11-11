@@ -30,8 +30,8 @@ Roblox.js is a OpenCloud API wrapper with full TypeScript support. Once installe
 
 Functions are named similar to the Lua equivalents and follow a similar structure. Each class is initialized with a universeId and an apiKey from https://create.roblox.com/credentials.
 
-# License 
-[MIT](https://compeydev.mit-license.org) © DevComp - see the [LICENSE.md](LICENSE) file for details.
-
 # Documentation
 For detailed documentations and examples check out [the wiki](https://github.com/CompeyDev/roblox.js/wiki) or the [`docs`](https://github.com/CompeyDev/roblox.js/tree/HEAD/docs) directory.
+  
+# License 
+[MIT](https://compeydev.mit-license.org) © DevComp - see the [LICENSE.md](LICENSE) file for details.
