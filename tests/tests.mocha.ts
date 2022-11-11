@@ -50,10 +50,9 @@ describe("GetsVersionAsync", function() {
     });
 });
 
-// MessagingService tests
 
 describe("PublishesAsync", function() {
-    it("successfully publish a message to a topic", function() {
+    it("successfully publishes a message to a topic", function() {
         PublishAsync()
     });
 });
