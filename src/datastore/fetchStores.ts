@@ -1,6 +1,8 @@
 import urlcat from 'urlcat';
 import axios from 'axios'
-import { Datastores } from '../../lib/types/types';
+import { Datastores, RequestResponses } from '../../lib/types/types';
+import handleResponse from '../../lib/handleResponse';
+// todo: test failing because types fails to import
 
 const BASE_URL = "https://apis.roblox.com/datastores/v1/universes"
 
@@ -9,7 +11,7 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
         BigInt(universeid)
         Number(limit)
     } catch(e) {
-        throw new Error("Invalid universeid: " + universeid)
+        throw new Error("Invalid arguments: " + { universeid, limit })
     }
     if (universeid) {
         const res_url = urlcat(BASE_URL, "/:universeid/standard-datastores", { universeid })
@@ -18,7 +20,10 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
             "x-api-key": apiKey
             }
         };
-        const response = await axios.get(res_url, config) // .catch(err =>  { throw((err.message).toString().substring(11)) })
+        const response = await axios.get(res_url, config)
+
+        handleResponse(response)
+        
         return await response.data
     }
 
@@ -30,6 +35,9 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
             }
         };
         const response = await axios.get(res_url, config)
+
+        handleResponse(response)
+
         return await response.data
     }
 
@@ -40,7 +48,10 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
             "x-api-key": apiKey
             }
         };
-        const response = await axios.get(res_url, config).catch(err => { throw(err.substr(11)) })
+        const response = await axios.get(res_url, config)
+
+        handleResponse(response)
+
         return await response.data
     }
 
@@ -52,6 +63,9 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
             }
         };
         const response = await axios.get(res_url, config)
+
+        handleResponse(response)
+
         return await response.data
     }
 
@@ -63,6 +77,9 @@ export default async function main(apiKey: string, universeid: string, prefix?: 
             }
         };
         const response = await axios.get(res_url, config)
+
+        handleResponse(response)
+
         return await response.data
     }
 }

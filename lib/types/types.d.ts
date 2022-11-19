@@ -1,3 +1,14 @@
+export type Config = {
+    universeid: string, 
+    apiKey: string,
+    intents: ClientIntents
+}
+
+export enum ClientIntents {
+    Datastore = "datastore", 
+    MessagingService = "messagingservice"
+}
+
 /**
  * @see[GetAsync](../../src/datastore/fetchEntries.ts) API return object type.
  */
@@ -42,8 +53,23 @@ export enum Scopes {
     Local = "local"
 }
 
+
+
+export enum RequestResponses {
+    INVALID_ARGUMENT = 400,
+    INSUFFICIENT_SCOPE = 403,
+    NOT_FOUND = 404,
+    ABORTED = 409,
+    RESOURCE_EXHAUSTED = 429,
+    CANCELLED = 499, 
+    INTERNAL = 500, 
+    NOT_IMPLEMENTED = 501, 
+    UNAVAILABLE = 503
+}
+
+export type RequestResponse = typeof RequestResponses[keyof typeof RequestResponses]
+
 declare class Datastore {
-    
     constructor(universeid: string, apiKey: string);
     public ListDataStoresAsync(prefix?: string, limit?: string, cursor?: string): Promise<Datastores|undefined>;
     public GetAsync(datastoreName: string, entryKey: string): Promise<string|number|boolean|undefined>;
