@@ -53,8 +53,6 @@ export enum Scopes {
     Local = "local"
 }
 
-
-
 export enum RequestResponses {
     INVALID_ARGUMENT = 400,
     INSUFFICIENT_SCOPE = 403,

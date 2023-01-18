@@ -28,6 +28,7 @@
     "urlcat": "^2.0.4"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "@types/chai": "^4.3.3",
     "@types/lodash": "^4.14.185",
     "@types/mocha": "^9.1.1",
