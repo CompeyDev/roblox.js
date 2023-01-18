@@ -3,10 +3,10 @@
     "target": "ESNext",                                  
     "module": "commonjs",                                
     "outDir": "dist",                                   
-    "esModuleInterop": true,                             
+    "esModuleInterop": true,                       
     "forceConsistentCasingInFileNames": true, 
     "strict": true,                                     
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "tests"]
+  "exclude": ["node_modules", "tests", "dist"],
 }

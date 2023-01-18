@@ -1,7 +1,7 @@
 import urlcat from 'urlcat';
 import axios from 'axios';
 import { toBuffer } from '../../lib/bufferify'
-import { DatastoreSetResponse } from '../../lib/types/types';
+import type { DatastoreSetResponse } from '../../lib/types/types';
 
 const BASE_URL = "https://apis.roblox.com/datastores/v1/universes"
 

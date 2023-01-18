@@ -5,7 +5,7 @@ import setEntry from './setEntry'
 import incrementEntry from './incrementEntry'
 import removeEntry from './removeEntry'
 import fetchEntryVersion from './fetchEntryVersion'
-import { DatastoreEntries, Datastores, DatastoreSetResponse, Datastore as DatastoreClass, Scopes, Config } from '../../lib/types/types'
+import type {  DatastoreEntries, Datastores, DatastoreSetResponse, Datastore as DatastoreClass, Scopes, Config } from '../../lib/types/types'
 
 export class Datastore implements DatastoreClass {
     private universeid: string;
@@ -55,13 +55,9 @@ export class Datastore implements DatastoreClass {
      * @param {string} limit - Limit of keys to fetch.
      * @param {boolean} AllScopes - Whether to fetch from all scopes or not.
      */
-    constructor(config: Config) {
-        this.apiKey = config.apiKey
-        this.universeid = config.universeid;
-
-        if (config.intents) {
-            // validate             
-        }
+    constructor(universeid: string, apiKey: string) {
+        this.apiKey = apiKey
+        this.universeid = universeid;
     }
 
     public async ListDataStoresAsync(prefix?: string, limit?: string, cursor?: string): Promise<Datastores|undefined> {

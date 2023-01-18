@@ -1,6 +1,6 @@
 import urlcat from 'urlcat';
 import axios from 'axios'
-import { Datastores, RequestResponses } from '../../lib/types/types';
+import type { Datastores } from '../../lib/types/types';
 import handleResponse from '../../lib/handleResponse';
 // todo: test failing because types fails to import
 

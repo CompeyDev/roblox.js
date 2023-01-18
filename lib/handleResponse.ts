@@ -1,10 +1,9 @@
 import { AxiosResponse } from "axios"
-import { RequestResponses } from "./types/types.d"
-// stop, pls stop.
+import { ERROR_TYPES } from "../src"
 
 export default function main(response: AxiosResponse) {
     if (response.status !== 200) {
-        const errorDescriptor = RequestResponses[response.status]
+        const errorDescriptor = ERROR_TYPES[response.status]
     
         if (!errorDescriptor) {
             throw new Error(`Unknown error occured with response code ${response.status}`)
@@ -14,3 +13,7 @@ export default function main(response: AxiosResponse) {
     }
     
 }
+
+// export default function (e: any) {
+//     console.log('d')
+// }

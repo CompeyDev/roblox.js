@@ -1,5 +1,5 @@
 import postTopic from './postTopic'
-import { MessagingService as MessagingServiceClass } from "../../lib/types/types";
+import { type MessagingService as MessagingServiceClass } from "../../lib/types/types";
 
 export class MessagingService implements MessagingServiceClass {
     private apiKey: string
