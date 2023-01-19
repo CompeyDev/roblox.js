@@ -19,7 +19,8 @@
     "test": "mocha tests/tests.mocha.ts",
     "push": "pnpm test && git push origin",
     "prepublish": "pnpm build && pnpm test",
-    "publish": "pnpm publish dist"
+    "publish": "pnpm publish dist",
+    "bump": "changeset"
   },
   "dependencies": {
     "axios": "^0.27.2",
