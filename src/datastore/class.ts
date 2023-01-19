@@ -5,11 +5,17 @@ import setEntry from './setEntry'
 import incrementEntry from './incrementEntry'
 import removeEntry from './removeEntry'
 import fetchEntryVersion from './fetchEntryVersion'
-import type {  DatastoreEntries, Datastores, DatastoreSetResponse, Datastore as DatastoreClass, Scopes, Config } from '../../lib/types/types'
+import { DatastoreEntries, Datastores, DatastoreSetResponse, Datastore as DatastoreClass, Scopes, Config, TClientIntents } from '../../lib/types/types'
+import Validator from '../../lib/validators'
+
 
 export class Datastore implements DatastoreClass {
     private universeid: string;
     private apiKey: string;
+    private intents: TClientIntents;
+
+    protected validator = new Validator()
+    private _validateIntents = this.validator._validateIntents
 
     /**
      * You can send and receive the following request and response payloads to DataStore API of Open Cloud.
@@ -55,12 +61,16 @@ export class Datastore implements DatastoreClass {
      * @param {string} limit - Limit of keys to fetch.
      * @param {boolean} AllScopes - Whether to fetch from all scopes or not.
      */
-    constructor(universeid: string, apiKey: string) {
-        this.apiKey = apiKey
-        this.universeid = universeid;
+    constructor(config: Config) {
+        this.apiKey = config.apiKey
+        this.universeid = config.universeid;
+        this.intents = config.intents
     }
+    
+    
 
     public async ListDataStoresAsync(prefix?: string, limit?: string, cursor?: string): Promise<Datastores|undefined> {
+        this._validateIntents(this.intents, "datastore")
 
         if (prefix) {
             const data = await fetchStores(this.apiKey, this.universeid, prefix)
@@ -93,6 +103,7 @@ export class Datastore implements DatastoreClass {
 
 
     public async ListKeysAsync(datastoreName: string, prefix?: string, limit?: string, cursor?: string, AllScopes?: boolean): Promise<DatastoreEntries|undefined> {
+        this._validateIntents(this.intents, "datastore")
 
         if (prefix) {
             const data = await fetchEntries(this.apiKey, datastoreName, this.universeid, prefix)
@@ -130,12 +141,15 @@ export class Datastore implements DatastoreClass {
     }
 
     public async GetAsync(datastoreName: string, entryKey: string): Promise<string|number|boolean|undefined> {
+        this._validateIntents(this.intents, "datastore")
+        
         const data = await fetchEntry(this.apiKey, this.universeid, datastoreName, entryKey)
 
         return data
     }
 
     public async SetAsync(datastoreName: string, entryKey: string, newValue: string|number|boolean, matchVersion?: string, exclusiveCreate?: Boolean): Promise<DatastoreSetResponse|undefined> {
+        this._validateIntents(this.intents, "datastore")
 
         if (datastoreName) {
             const data = await setEntry(this.apiKey, this.universeid, datastoreName, entryKey, newValue)
@@ -163,18 +177,24 @@ export class Datastore implements DatastoreClass {
     }
 
     public async IncrementAsync(datastoreName: string, entryKey: string, incrementBy: number): Promise<DatastoreSetResponse> {
+        this._validateIntents(this.intents, "datastore")
+
         const data = await incrementEntry(this.apiKey, this.universeid, datastoreName, entryKey, incrementBy)
 
         return data
     }
 
     public async RemoveAsync(datastoreName: string, entryKey: string): Promise<string|number|boolean|undefined> {
+        this._validateIntents(this.intents, "datastore")
+        
         const data = await removeEntry(this.apiKey, this.universeid, datastoreName, entryKey)
 
         return data
     }
 
     public async GetVersionAsync(datastoreName: string, entryKey: string, versionid: string, scope?: Scopes): Promise<string|number|boolean|undefined> {
+        this._validateIntents(this.intents, "datastore")
+
         if (versionid) {
             const data = await fetchEntryVersion(this.apiKey, this.universeid, datastoreName, entryKey, versionid)
 

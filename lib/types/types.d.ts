@@ -1,13 +1,15 @@
 export type Config = {
     universeid: string, 
     apiKey: string,
-    intents: ClientIntents
+    intents: ClientIntents | TClientIntents
 }
 
 export enum ClientIntents {
     Datastore = "datastore", 
     MessagingService = "messagingservice"
 }
+
+export type TClientIntents = typeof ClientIntents[keyof typeof ClientIntents]
 
 /**
  * @see[GetAsync](../../src/datastore/fetchEntries.ts) API return object type.

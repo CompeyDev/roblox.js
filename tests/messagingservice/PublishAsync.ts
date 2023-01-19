@@ -1,10 +1,14 @@
+//@ts-nocheck
 import { MessagingService } from '../../src'
 import * as dotenv from 'dotenv'
+import { ClientIntents } from '../../lib/types/types'
 dotenv.config()
 
-
-//@ts-ignore
-const message = new MessagingService(process.env.universeId, process.env.apiKey)
+const message = new MessagingService({
+    apiKey: process.env.apiKey,
+    universeid: process.env.universeId,
+    intents: ClientIntents.MessagingService
+})
 
 
 export default async function main() {
