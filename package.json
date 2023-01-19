@@ -2,7 +2,7 @@
   "name": "rblx.js",
   "description": "A JavaScript wrapper for interacting with the ROBLOX OpenCloud API.",
   "repository": "https://github.com/CompeyDev/roblox.js",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "author": "hi@devcomp.xyz",
@@ -20,7 +20,8 @@
     "push": "pnpm test && git push origin",
     "prepublish": "pnpm build && pnpm test",
     "publish": "pnpm publish dist",
-    "bump": "changeset"
+    "bump:update": "changeset",
+    "bump:release": "changeset version"
   },
   "dependencies": {
     "axios": "^0.27.2",
