@@ -1,6 +1,5 @@
-import { Datastore } from '../../dist'
+import { Datastore, ClientIntents } from '../../dist/index.js'
 import * as dotenv from 'dotenv'
-import { ClientIntents } from '../../lib/types/types'
 dotenv.config()
 
 //@ts-ignore

@@ -1,7 +1,6 @@
 //@ts-nocheck
-import { MessagingService } from '../../src'
+import { MessagingService, ClientIntents } from '../../dist/index.js'
 import * as dotenv from 'dotenv'
-import { ClientIntents } from '../../lib/types/types'
 dotenv.config()
 
 const message = new MessagingService({

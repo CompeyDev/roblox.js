@@ -12,4 +12,9 @@ const ERROR_TYPES: { [errorCode: number]: string } =  {
     503: "UNAVAILABLE"
 } as const;
 
-export { Datastore, MessagingService, ERROR_TYPES }
+const ClientIntents = {
+    "Datastore": "datastore",
+    "MessagingService": "messagingservice"
+}
+
+export { Datastore, MessagingService, ERROR_TYPES, ClientIntents }

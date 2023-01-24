@@ -1,4 +1,4 @@
-import { ClientIntents, Datastore } from '../../dist'
+import { ClientIntents, Datastore } from '../../dist/index.js'
 import * as dotenv from 'dotenv'
 dotenv.config()
 
