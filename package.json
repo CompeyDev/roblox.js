@@ -18,7 +18,7 @@
     "build": "tsc && bash export.sh",
     "test": "mocha tests/tests.mocha.ts",
     "push": "pnpm test && git push origin",
-    "prepublish": "pnpm build && pnpm test",
+    "prepublish": "pnpm build && pnpm test && pnpm bump:release",
     "publish": "pnpm publish dist",
     "bump:update": "changeset",
     "bump:release": "changeset version"
