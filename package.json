@@ -15,7 +15,7 @@
   "private": false,
   "scripts": {
     "watch": "tsc -w",
-    "build": "tsc && bash export.sh",
+    "build": "tsc -b --verbose && bash export.sh",
     "test": "mocha tests/tests.mocha.ts",
     "push": "pnpm test && git push origin",
     "prepublish": "pnpm build && pnpm test && pnpm bump:release",
