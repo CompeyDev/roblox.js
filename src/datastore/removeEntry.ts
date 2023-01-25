@@ -1,5 +1,6 @@
 import urlcat from 'urlcat';
 import axios from 'axios'
+import handleResponse from '../../lib/handleResponse';
 
 const BASE_URL = "https://apis.roblox.com/datastores/v1/universes"
 
@@ -16,5 +17,8 @@ export default async function main(apiKey: string, universeid: string, datastore
             }
         };
         const response = await axios.delete(res_url, config)
+
+        handleResponse(response)
+
         return await response.data
 }

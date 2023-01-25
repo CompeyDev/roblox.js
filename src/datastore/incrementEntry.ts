@@ -1,6 +1,7 @@
 import urlcat from 'urlcat';
 import axios from 'axios'
 import type { DatastoreSetResponse } from '../../lib/types/types';
+import handleResponse from '../../lib/handleResponse';
 
 const BASE_URL = "https://apis.roblox.com/datastores/v1/universes"
 
@@ -18,5 +19,8 @@ export default async function main(apiKey: string, universeid: string, datastore
             }
         };
         const response = await axios.post(res_url, incrementBy, config)
+
+        handleResponse(response)
+
         return await response.data
 }

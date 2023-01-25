@@ -1,5 +1,6 @@
 import urlcat from 'urlcat';
 import axios from 'axios'
+import handleResponse from '../../lib/handleResponse';
 
 const BASE_URL = "https://apis.roblox.com/messaging-service/v1/universes"
 
@@ -17,22 +18,7 @@ export default async function main(apiKey: string, universeid: string, topic: st
         };
         const response = await axios.post(res_url, { "message": message }, config)
 
-        if (response.status == 400) {
-            throw new Error("Invalid request.")
-        }
-
-
-        if (response.status == 401) {
-            throw new Error("API key not valid for operation, user does not have authorization.")
-        }
-
-        if (response.status == 403) {
-            throw new Error("Publish is not allowed on universe.")
-        }
-
-        if (response.status == 500) {
-            throw new Error("Server internal error / Unknown error.")
-        }
+        handleResponse(response)
 
 
         return await response.data
