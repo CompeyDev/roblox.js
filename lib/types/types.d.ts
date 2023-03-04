@@ -70,7 +70,7 @@ export enum RequestResponses {
 export type RequestResponse = typeof RequestResponses[keyof typeof RequestResponses]
 
 declare class Datastore {
-    constructor(universeid: string, apiKey: string);
+    constructor(opts: Config);
     public ListDataStoresAsync(prefix?: string, limit?: string, cursor?: string): Promise<Datastores|undefined>;
     public GetAsync(datastoreName: string, entryKey: string): Promise<string|number|boolean|undefined>;
     public SetAsync(datastoreName: string, entryKey: string, newValue: string|number|boolean, matchVersion?: string, exclusiveCreate?: Boolean): Promise<DatastoreSetResponse|undefined>
@@ -81,6 +81,6 @@ declare class Datastore {
 }
 
 declare class MessagingService {
-    constructor(universeid: string, apiKey: string);
+    constructor(opts: Config);
     public PublishAsync(topi: string, message: string): Promise<string|number|boolean|undefined>;
 }

@@ -4,8 +4,8 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const message = new MessagingService({
-    apiKey: process.env.apiKey,
-    universeid: process.env.universeId,
+    apiKey: process.env.apiKey as string,
+    universeid: process.env.universeId as string,
     intents: ClientIntents.MessagingService
 })
 

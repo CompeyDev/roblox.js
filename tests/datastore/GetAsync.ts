@@ -5,8 +5,8 @@ dotenv.config()
 
 //@ts-ignore
 const datastore = new Datastore({
-    apiKey: process.env.apiKey,
-    universeid: process.env.universeId,
+    apiKey: process.env.apiKey as string,
+    universeid: process.env.universeId as string,
     intents: ClientIntents.Datastore
 })
 

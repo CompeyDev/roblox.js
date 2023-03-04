@@ -9,10 +9,10 @@ export class MessagingService implements MessagingServiceClass {
 
     private validator = new Validator()
     private _validateIntents = this.validator._validateIntents
-    constructor(config: Config) {
-        this.apiKey = config.apiKey
-        this.universeid = config.universeid;
-        this.intents = config.intents
+    constructor(opts: Config) {
+        this.apiKey = opts.apiKey
+        this.universeid = opts.universeid;
+        this.intents = opts.intents
     }
 
     public async PublishAsync(topic: string, message: string): Promise<string|number|boolean|undefined> {

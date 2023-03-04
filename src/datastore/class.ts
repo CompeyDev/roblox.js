@@ -61,10 +61,10 @@ export class Datastore implements DatastoreClass {
      * @param {string} limit - Limit of keys to fetch.
      * @param {boolean} AllScopes - Whether to fetch from all scopes or not.
      */
-    constructor(config: Config) {
-        this.apiKey = config.apiKey
-        this.universeid = config.universeid;
-        this.intents = config.intents
+    constructor(opts: Config) {
+        this.apiKey = opts.apiKey
+        this.universeid = opts.universeid;
+        this.intents = opts.intents
     }
     
     
