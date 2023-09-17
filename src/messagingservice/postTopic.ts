@@ -10,7 +10,7 @@ export default async function main(apiKey: string, universeid: string, topic: st
     } catch(e) {
         throw new Error("Invalid universeid: " + universeid)
     }
-        const res_url = urlcat(BASE_URL, "/:universeid/topics/topic", { universeid, topic })
+        const res_url = urlcat(BASE_URL, "/:universeid/topics/:topic", { universeid, topic })
         const config = {
             headers:{
             "x-api-key": apiKey
